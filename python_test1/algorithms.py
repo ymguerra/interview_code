@@ -886,9 +886,43 @@ of the shorter string within the longer one. Print the location of each permutat
 '''
 
 def find_permutations(s, b):
-    pass
+    permutations = []    
+    s_length = len(s)
+    b_length = len(b)
+    start_position = 0
+    count_s = collections.Counter(s)
+
+    return aux_find_permutations(s, s_length, count_s, b, b_length, start_position, permutations)
+
+def aux_find_permutations(s, s_length, count_s, b, b_length, start_position, permutations):
+
+    if (b_length - start_position) < s_length:
+        return permutations
+
+    word_to_check = b[start_position:s_length + start_position]
+    if word_to_check == s:
+        permutations.append((start_position, word_to_check))
+
+    elif is_permutation(s, count_s, word_to_check, permutations):
+        permutations.append((start_position, word_to_check))
+
+    return aux_find_permutations(s, s_length, count_s, b, b_length, start_position +1, permutations)
+
+def is_permutation(s, count_s, word_to_check, permutations):
+
+   # for _, word in permutations:
+  #      if word_to_check == word:
+  #          return True
+    
+    count_word_check = collections.Counter(word_to_check)
+
+    if count_s == count_word_check:
+        return True
+    
+    return False
 
 
 print (find_permutations('abbc', 'cbabadcbbabbcbabaabccbabc'))
+print (find_permutations('ABCD', 'BACDGABCDA'))
 
 print ('***************** String  ---  find permutations ********************************')
