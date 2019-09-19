@@ -1,4 +1,5 @@
 
+import winsound
 '''
      Maestria tiene Ediciones, coordinador, comité académico (se guarda cuando se actualiza)
     Maetria tiene el expediente del programa, el expediente de cada edicion
@@ -20,19 +21,18 @@
 '''
 nums = [55, 44, 33, 22, 11, 5, 1]
 
-greater_than_five = [ i for i in nums if i > 5]
+greater_than_five = [i for i in nums if i > 5]
 
-even = [i for i in nums if i%2 == 0]
+even = [i for i in nums if i % 2 == 0]
 
-even = list(filter(lambda x: x%2 == 0, nums))
+even = list(filter(lambda x: x % 2 == 0, nums))
 
-#print(greater_than_five)
-#print(even)
+# print(greater_than_five)
+# print(even)
 
-import winsound
-
-i =0
+i = 0
 while i < 10:
     winsound.PlaySound("*", winsound.SND_ALIAS)
-    i+= 1
+    i + = 1
+
 

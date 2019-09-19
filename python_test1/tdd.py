@@ -1,9 +1,12 @@
 import unittest
 
+
 class Calculator:
     def __init__(self):
         self.value = 0
-# Creamos una clase heredando de TestCase
+
+
+#  Creamos una clase heredando de TestCase
 class TestMyCalculator(unittest.TestCase):
 
     def setUp(self):
