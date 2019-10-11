@@ -6,7 +6,6 @@ class Calculator:
         self.value = 0
 
 
-#  Creamos una clase heredando de TestCase
 class TestMyCalculator(unittest.TestCase):
 
     def setUp(self):
